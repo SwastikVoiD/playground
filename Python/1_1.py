@@ -23,7 +23,6 @@ def tuple_sort(tuplist,ind):
                 a = tuplist.pop(tuplist.index(j))
                 sorted_tup.append(a)
                 continue
-            
     return sorted_tup
 
 
