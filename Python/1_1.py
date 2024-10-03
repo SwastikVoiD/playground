@@ -9,7 +9,7 @@ Expected Output: [('item3', '24.5'), ('item2', '15.10'), ('item1', '12.20')]'''
 # we use a user-def function to increase the understanding and to make the code flexible to work under various situations.
 # so let's get into the code.
 
-
+# the required function
 def tuple_sort(tuplist,ind):
     sorter = []
     sorted_tup = []
@@ -25,7 +25,7 @@ def tuple_sort(tuplist,ind):
                 continue
     return sorted_tup
 
-
+# main answer
 
 tup_input = eval(input())
 print(tuple_sort(tup_input,1))
