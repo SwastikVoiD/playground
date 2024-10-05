@@ -1,2 +1,12 @@
-<h1>Hello!</h1>
-<p1>This is a Repository to store all my practice files and also continue to use and learn more about git and github along with it.<p1>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Playground</title>
+</head>
+<body>
+
+<h1>Python</h1>
+<p>Here I've uploaded the solutions to the problems which were given by professors</p>
+
+</body>
+</html>
