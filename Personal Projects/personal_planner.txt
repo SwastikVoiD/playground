@@ -1,0 +1,16 @@
+This project is gonna be an application to help me keep track of my day to day activites
+and help me be more efficient in life.
+The basic plan would be to have features added onto it slowly and in the end it becomes more better with time and this is gonna
+be good for everyone and my own life
+Let us decide onto the features
+1. Diet tracker
+2. Money tracker
+3. Workout tracker
+4. Daily Planner
+This gonna be the basic plan which gonna be updated over time and
+this is gonna be improved in the near future.
+Lesgoo
+
+1. Diet tracker:
+calorie Deficit --> This is gonna help us keep track of our daily calorie in take and help us put together a basic diet chart over time
+Journaling 
