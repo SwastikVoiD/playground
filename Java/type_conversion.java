@@ -17,7 +17,7 @@ public class type_conversion {
 
         // explicit csting when going out of range
         byte c = 127;
-        int d = 257;
+        int d = c;
         System.out.println(d);
 
         byte k = (byte) d;
