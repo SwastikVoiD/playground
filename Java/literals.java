@@ -9,7 +9,8 @@ public class literals {
         char c = 'd';
         c++;
         System.out.println(c);
-        
+        System.out.println(num1+num2+num3);
+        System.out.println(num4+num5);
 
     }
 }
