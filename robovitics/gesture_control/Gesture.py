@@ -2,7 +2,7 @@ import cv2
 import mediapipe as mp
 import socket
 
-ESP32_IP = ""
+ESP32_IP = ""  #IP address
 ESP32_PORT = 4210
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -53,4 +53,16 @@ while cap.isOpened():
             print(f"Send data: {fingers_extended}")
         except Exception as e:
             print(f"Error Sending data:{e}")
+        
+        mp_drawing.draw_landmarks(frame,hand_landmarks,mp_hands.HAND_CONNECTIONS)
 
+        cv2.putText(frame,f"fingers:{fingers_extended}",(50,50),cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 1,(0,255,0),2)
+
+        cv2.imshow("Finger Detection", frame)
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+cap.release()
+cv2.destroyAllWindows()
+sock.close()
