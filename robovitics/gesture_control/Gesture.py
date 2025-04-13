@@ -32,7 +32,7 @@ while cap.isOpened():
 
     results = hands.process(rgb_frame)
 
-    fingers_extended = 0
+    # fingers_extended = 0
 
     if results.multi_hand_landmarks:
         hand_landmarks = results.multi_hand_landmarks[0]
@@ -45,14 +45,14 @@ while cap.isOpened():
                 fingers_extended += 1
 
         if hand_label == "Right":
-                if landmarks[THUMB_TIP].x < landmarks[THUMB_IP].x:
-                    fingers_extended += 1
-            else:
-                if landmarks[THUMB_TIP].x > landmarks[THUMB_IP].x:
-                    fingers_extended += 1
+            if landmarks[THUMB_TIP].x < landmarks[THUMB_IP].x:
+                fingers_extended += 1
+        else:
+            if landmarks[THUMB_TIP].x > landmarks[THUMB_IP].x:
+                fingers_extended += 1
         
         try:
-            sock.sendto(str(fingers_extended.encode()),(ESP32_IP,ESP32_PORT))
+            sock.sendto(str(fingers_extended).encode(),(ESP32_IP,ESP32_PORT))
             print(f"Send data: {fingers_extended}")
         except Exception as e:
             print(f"Error Sending data:{e}")
