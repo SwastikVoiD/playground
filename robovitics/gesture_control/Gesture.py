@@ -2,7 +2,7 @@ import cv2
 import mediapipe as mp
 import socket
 
-ESP32_IP = ""  #IP address
+ESP32_IP = "192.168.1.100"  #IP address
 ESP32_PORT = 4210
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -32,16 +32,19 @@ while cap.isOpened():
 
     results = hands.process(rgb_frame)
 
+    fingers_extended = 0
+
     if results.multi_hand_landmarks:
         hand_landmarks = results.multi_hand_landmarks[0]
-        landmarks = hand_landmarks
+        landmarks = hand_landmarks.landmark
         hand_label = results.multi_handedness[0].classification[0].label
         fingers_extended = 0
+
         for tip in FINGER_TIPS:
             if landmarks[tip].y < landmarks[tip-2].y:
                 fingers_extended += 1
 
-            if hand_label == "Right":
+        if hand_label == "Right":
                 if landmarks[THUMB_TIP].x < landmarks[THUMB_IP].x:
                     fingers_extended += 1
             else:
