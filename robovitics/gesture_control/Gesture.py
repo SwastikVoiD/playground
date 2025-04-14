@@ -2,7 +2,7 @@ import cv2
 import mediapipe as mp
 import socket
 
-ESP32_IP = "192.168.1.100"  #IP address
+ESP32_IP = "192.168.4.1"  #IP address
 ESP32_PORT = 4210
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -61,10 +61,10 @@ while cap.isOpened():
 
         cv2.putText(frame,f"fingers:{fingers_extended}",(50,50),cv2.FONT_HERSHEY_SCRIPT_SIMPLEX, 1,(0,255,0),2)
 
-        cv2.imshow("Finger Detection", frame)
+    cv2.imshow("Finger Detection", frame)
 
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
 cap.release()
 cv2.destroyAllWindows()
